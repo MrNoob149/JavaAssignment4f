@@ -1,0 +1,27 @@
+{
+  "name": "testing",
+  "version": "1.0.0",
+  "description": "",
+  "homepage": "https://github.com/MrNoob149/school-stuff#readme",
+  "bugs": {
+    "url": "https://github.com/MrNoob149/school-stuff/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MrNoob149/school-stuff.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "@eslint/css": "^2.0.0",
+    "@eslint/js": "^10.0.1",
+    "@eslint/json": "^2.1.1",
+    "eslint": "^10.12.0",
+    "globals": "^17.13.0"
+  }
+}
