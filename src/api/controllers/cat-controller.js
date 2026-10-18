@@ -1,19 +1,34 @@
-import { addCat, findCatById, listAllCats } from '../models/cat-model.js';
+import {listAllCats, findCatById, addCat, modifyCat, removeCat } from '../models/cat-model.js';
 
-const getCat = (req, res) => {
-  res.json(listAllCats());
+const getCat = async (req, res, next) => {
+  try {
+    const cats = await listAllCats();
+    res.json(cats);
+  } catch (error) {
+    next(error);
+  }
 };
 
-const getCatById = (req, res) => {
+const getCatById = (req, res, next) => {
   const cat = findCatById(req.params.id);
   if (cat) {
     res.json(cat);
   } else {
     res.sendStatus(404);
   }
+  res.json (cat);
 };
 
-const postCat = (req, res) => {
+const getCatsByUserId = async (req, res, next) => {
+  try {
+    const cats = await findCatsByUserId(req.params.userId);
+    res.json(cats);
+  } catch (error) {
+    next(error);
+  }
+};
+
+const postCat = (req, res, next) => {
   console.log(req.body);
   console.log(req.file);
 
@@ -47,4 +62,4 @@ const deleteCat = (req, res) => {
   res.sendStatus(200);
 };
 
-export { getCat, getCatById, postCat, putCat, deleteCat };
+export { getCat, getCatById, postCat, putCat, deleteCat, getCatsByUserId };
